@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="WebApplication5.Site2" %>
+
+<!DOCTYPE html>
+
+<html>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #2c2929;
+            position: fixed;
+            border-bottom: outset;
+            border-bottom-color: white;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            float: left;
+            margin: 0 0 3px 0;
+            vertical-align: central;
+        }
+
+            li a {
+                display: block;
+                color: whitesmoke;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        .auto-style1 {
+            position: fixed;
+            bottom: -1px;
+            left: -3px;
+            width: 100%;
+            margin: 0 0 4 0;
+        }
+
+        .textbox {
+            border: 1px solid #c4c4c4;
+            font-size: 13px;
+            padding: 4px 4px 4px 4px;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            box-shadow: 0px 0px 8px #d9d9d9;
+            -moz-box-shadow: 0px 0px 8px #d9d9d9;
+            -webkit-box-shadow: 0px 0px 8px #d9d9d9;
+        }
+
+            .textbox:focus {
+                outline: none;
+                border: 1px solid #7bc1f7;
+                box-shadow: 0px 0px 8px #7bc1f7;
+                -moz-box-shadow: 0px 0px 8px #7bc1f7;
+                -webkit-box-shadow: 0px 0px 8px #7bc1f7;
+            }
+
+        .example_e {
+            border: none;
+            background: #404040;
+            color: #ffffff !important;
+            font-weight: 100;
+            padding: 20px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+        }
+
+            .example_e:hover {
+                color: #404040 !important;
+                font-weight: 700 !important;
+                letter-spacing: 3px;
+                background: none;
+                -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+                -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+                transition: all 0.3s ease 0s;
+            }
+    </style>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

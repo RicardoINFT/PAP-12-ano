@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InstaLocalModelStoreContainer" CdmEntityContainer="InstaLocalEntities2">
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="InstaLocalModel.Applications">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comentario_Classificacao">
+      <EntityTypeMapping TypeName="InstaLocalModel.Comentario_Classificacao">
+        <MappingFragment StoreEntitySet="Comentario_Classificacao">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Utilizador" ColumnName="Utilizador" />
+          <ScalarProperty Name="Local1" ColumnName="Local1" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+          <ScalarProperty Name="Classificacao" ColumnName="Classificacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comida">
+      <EntityTypeMapping TypeName="InstaLocalModel.Comida">
+        <MappingFragment StoreEntitySet="Comida">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Local1" ColumnName="Local1" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Morada" ColumnName="Morada" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Localidade" ColumnName="Localidade" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="URLs" ColumnName="URLs" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foto">
+      <EntityTypeMapping TypeName="InstaLocalModel.Foto">
+        <MappingFragment StoreEntitySet="Foto">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Legenda" ColumnName="Legenda" />
+          <ScalarProperty Name="Local1" ColumnName="Local1" />
+          <ScalarProperty Name="Ficheiro" ColumnName="Ficheiro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Local">
+      <EntityTypeMapping TypeName="InstaLocalModel.Local">
+        <MappingFragment StoreEntitySet="Local">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Utilizador" ColumnName="Utilizador" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Localidade" ColumnName="Localidade" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="What3Words" ColumnName="What3Words" />
+          <ScalarProperty Name="Morada" ColumnName="Morada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Memberships">
+      <EntityTypeMapping TypeName="InstaLocalModel.Memberships">
+        <MappingFragment StoreEntitySet="Memberships">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowsStart" ColumnName="FailedPasswordAnswerAttemptWindowsStart" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="InstaLocalModel.Profiles">
+        <MappingFragment StoreEntitySet="Profiles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+          <ScalarProperty Name="PropertyValueStrings" ColumnName="PropertyValueStrings" />
+          <ScalarProperty Name="PropertyValueBinary" ColumnName="PropertyValueBinary" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Realizador">
+      <EntityTypeMapping TypeName="InstaLocalModel.Realizador">
+        <MappingFragment StoreEntitySet="Realizador">
+          <ScalarProperty Name="IDRealizador" ColumnName="IDRealizador" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Nacionalidade" ColumnName="Nacionalidade" />
+          <ScalarProperty Name="Biografia" ColumnName="Biografia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="InstaLocalModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Segue">
+      <EntityTypeMapping TypeName="InstaLocalModel.Segue">
+        <MappingFragment StoreEntitySet="Segue">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SegueUtilizador" ColumnName="SegueUtilizador" />
+          <ScalarProperty Name="SeguidoPorUtilizador" ColumnName="SeguidoPorUtilizador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="InstaLocalModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilizador">
+      <EntityTypeMapping TypeName="InstaLocalModel.Utilizador">
+        <MappingFragment StoreEntitySet="Utilizador">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visitar">
+      <EntityTypeMapping TypeName="InstaLocalModel.Visitar">
+        <MappingFragment StoreEntitySet="Visitar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Local1" ColumnName="Local1" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Morada" ColumnName="Morada" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Localidade" ColumnName="Localidade" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="URLs" ColumnName="URLs" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UsersInRoles" TypeName="InstaLocalModel.UsersInRoles" StoreEntitySet="UsersInRoles">
+      <EndProperty Name="Roles">
+        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="Users">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="ComentariosProc" FunctionName="InstaLocalModel.Store.ComentariosProc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InstaLocalModel.ComentariosProc_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Utilizador" ColumnName="Utilizador" />
+          <ScalarProperty Name="Local1" ColumnName="Local1" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+          <ScalarProperty Name="Classificacao" ColumnName="Classificacao" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ComidaProc" FunctionName="InstaLocalModel.Store.ComidaProc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InstaLocalModel.ComidaProc_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Local1" ColumnName="Local1" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Morada" ColumnName="Morada" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Localidade" ColumnName="Localidade" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="URLs" ColumnName="URLs" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DeletComida" FunctionName="InstaLocalModel.Store.DeletComida" />
+    <FunctionImportMapping FunctionImportName="DeleteComentarios" FunctionName="InstaLocalModel.Store.DeleteComentarios" />
+    <FunctionImportMapping FunctionImportName="DeleteLocal" FunctionName="InstaLocalModel.Store.DeleteLocal" />
+    <FunctionImportMapping FunctionImportName="Deletesegue" FunctionName="InstaLocalModel.Store.Deletesegue" />
+    <FunctionImportMapping FunctionImportName="DeleteVisitar" FunctionName="InstaLocalModel.Store.DeleteVisitar" />
+    <FunctionImportMapping FunctionImportName="DeletFoto" FunctionName="InstaLocalModel.Store.DeletFoto" />
+    <FunctionImportMapping FunctionImportName="DeletUtilizador" FunctionName="InstaLocalModel.Store.DeletUtilizador" />
+    <FunctionImportMapping FunctionImportName="FotoProc" FunctionName="InstaLocalModel.Store.FotoProc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InstaLocalModel.FotoProc_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Legenda" ColumnName="Legenda" />
+          <ScalarProperty Name="Local1" ColumnName="Local1" />
+          <ScalarProperty Name="Ficheiro" ColumnName="Ficheiro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ImagensPorId" FunctionName="InstaLocalModel.Store.ImagensPorId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InstaLocalModel.ImagensPorId_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Utilizador" ColumnName="Utilizador" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Localidade" ColumnName="Localidade" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="What3Words" ColumnName="What3Words" />
+          <ScalarProperty Name="Morada" ColumnName="Morada" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Insertcomentarios" FunctionName="InstaLocalModel.Store.Insertcomentarios" />
+    <FunctionImportMapping FunctionImportName="insertComida" FunctionName="InstaLocalModel.Store.insertComida" />
+    <FunctionImportMapping FunctionImportName="Insertfoto" FunctionName="InstaLocalModel.Store.Insertfoto" />
+    <FunctionImportMapping FunctionImportName="InsertLocal" FunctionName="InstaLocalModel.Store.InsertLocal" />
+    <FunctionImportMapping FunctionImportName="insertSegue" FunctionName="InstaLocalModel.Store.insertSegue" />
+    <FunctionImportMapping FunctionImportName="InsertUtilizador" FunctionName="InstaLocalModel.Store.InsertUtilizador" />
+    <FunctionImportMapping FunctionImportName="InsertVisitar" FunctionName="InstaLocalModel.Store.InsertVisitar" />
+    <FunctionImportMapping FunctionImportName="Local1Proc" FunctionName="InstaLocalModel.Store.Local1Proc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InstaLocalModel.Local1Proc_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Utilizador" ColumnName="Utilizador" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Localidade" ColumnName="Localidade" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="What3Words" ColumnName="What3Words" />
+          <ScalarProperty Name="Morada" ColumnName="Morada" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="segueProc" FunctionName="InstaLocalModel.Store.segueProc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InstaLocalModel.segueProc_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SegueUtilizador" ColumnName="SegueUtilizador" />
+          <ScalarProperty Name="SeguidoPorUtilizador" ColumnName="SeguidoPorUtilizador" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Updatecomentarios" FunctionName="InstaLocalModel.Store.Updatecomentarios" />
+    <FunctionImportMapping FunctionImportName="Updatecomida" FunctionName="InstaLocalModel.Store.Updatecomida" />
+    <FunctionImportMapping FunctionImportName="UpdateSegue" FunctionName="InstaLocalModel.Store.UpdateSegue" />
+    <FunctionImportMapping FunctionImportName="UpdateUtilizador" FunctionName="InstaLocalModel.Store.UpdateUtilizador" />
+    <FunctionImportMapping FunctionImportName="UpdateVisitar" FunctionName="InstaLocalModel.Store.UpdateVisitar" />
+    <FunctionImportMapping FunctionImportName="UtilizadorProc" FunctionName="InstaLocalModel.Store.UtilizadorProc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InstaLocalModel.UtilizadorProc_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VisitarProc" FunctionName="InstaLocalModel.Store.VisitarProc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InstaLocalModel.VisitarProc_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Local1" ColumnName="Local1" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Morada" ColumnName="Morada" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Localidade" ColumnName="Localidade" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="URLs" ColumnName="URLs" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

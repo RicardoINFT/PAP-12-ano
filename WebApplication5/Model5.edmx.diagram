@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1eacf0926b05434f9c305111d2f5439c" Name="Diagram1">
+        <EntityTypeShape EntityType="InstaLocalModel.Application" Width="1.5" PointX="7.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Comentario_Classificacao" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Comida" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Foto" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Local" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Membership" Width="1.5" PointX="10" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Profile" Width="1.5" PointX="14.5" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Role" Width="1.5" PointX="10" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Segue" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.User" Width="1.5" PointX="12.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Utilizador" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstaLocalModel.Visitar" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="InstaLocalModel.MembershipEntity_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.RoleEntity_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.User_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.FK__Comentari__Local__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.FK__Comida__Local1__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.FK__Foto__Local1__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.FK__Local__Utilizado__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.FK__Visitar__local1__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.MembershipEntity_User" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.ProfileEntity_User" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.FK__Segue__SegueUtil__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.FK__Visitar__user1__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="InstaLocalModel.UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

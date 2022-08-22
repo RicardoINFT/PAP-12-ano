@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InstaLocalModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="235" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Comentario_Classificacao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Utilizador" Type="int" />
+    <Property Name="Local1" Type="int" />
+    <Property Name="Data" Type="date" />
+    <Property Name="Hora" Type="time" Precision="7" />
+    <Property Name="Comentarios" Type="char" MaxLength="100" />
+    <Property Name="Classificacao" Type="int" />
+  </EntityType>
+  <EntityType Name="Comida">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Local1" Type="int" />
+    <Property Name="Nome" Type="varchar" MaxLength="30" />
+    <Property Name="Morada" Type="varchar" MaxLength="100" />
+    <Property Name="CodigoPostal" Type="nvarchar" MaxLength="9" />
+    <Property Name="Localidade" Type="char" MaxLength="1" />
+    <Property Name="Telefone" Type="varchar" MaxLength="9" />
+    <Property Name="URLs" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Instagram" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Foto" Type="image" />
+  </EntityType>
+  <EntityType Name="Foto">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Legenda" Type="nvarchar" MaxLength="200" />
+    <Property Name="Local1" Type="int" />
+    <Property Name="Ficheiro" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Local">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Utilizador" Type="int" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="30" />
+    <Property Name="CodigoPostal" Type="varchar" MaxLength="9" />
+    <Property Name="Localidade" Type="char" MaxLength="50" />
+    <Property Name="Descricao" Type="char" MaxLength="200" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="20" />
+    <Property Name="Longitude" Type="varchar" MaxLength="12" />
+    <Property Name="Foto" Type="nvarchar" MaxLength="200" />
+    <Property Name="Video" Type="nvarchar" MaxLength="200" />
+    <Property Name="Latitude" Type="varchar" MaxLength="12" />
+    <Property Name="What3Words" Type="char" MaxLength="30" />
+    <Property Name="Morada" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Memberships">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyValueStrings" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyValueBinary" Type="varbinary(max)" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Segue">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SegueUtilizador" Type="int" />
+    <Property Name="SeguidoPorUtilizador" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Utilizador">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Visitar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Local1" Type="int" />
+    <Property Name="Nome" Type="varchar" MaxLength="30" />
+    <Property Name="Morada" Type="char" MaxLength="30" />
+    <Property Name="CodigoPostal" Type="char" MaxLength="9" />
+    <Property Name="Localidade" Type="char" MaxLength="30" />
+    <Property Name="Telefone" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="URLs" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Foto" Type="image" />
+  </EntityType>
+  <Association Name="FK__Comentari__Local__300424B4">
+    <End Role="Local" Type="Self.Local" Multiplicity="0..1" />
+    <End Role="Comentario_Classificacao" Type="Self.Comentario_Classificacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comentario_Classificacao">
+        <PropertyRef Name="Local1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comida__Local1__31EC6D26">
+    <End Role="Local" Type="Self.Local" Multiplicity="0..1" />
+    <End Role="Comida" Type="Self.Comida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comida">
+        <PropertyRef Name="Local1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Foto__Local1__32E0915F">
+    <End Role="Local" Type="Self.Local" Multiplicity="0..1" />
+    <End Role="Foto" Type="Self.Foto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Foto">
+        <PropertyRef Name="Local1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Local__Utilizado__33D4B598">
+    <End Role="Utilizador" Type="Self.Utilizador" Multiplicity="0..1" />
+    <End Role="Local" Type="Self.Local" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizador">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Local">
+        <PropertyRef Name="Utilizador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Segue__SegueUtil__34C8D9D1">
+    <End Role="Local" Type="Self.Local" Multiplicity="0..1" />
+    <End Role="Segue" Type="Self.Segue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Segue">
+        <PropertyRef Name="SegueUtilizador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Visitar__Local1__36B12243">
+    <End Role="Local" Type="Self.Local" Multiplicity="0..1" />
+    <End Role="Visitar" Type="Self.Visitar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Visitar">
+        <PropertyRef Name="Local1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipEntity_Application">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="Memberships" Type="Self.Memberships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipEntity_User">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Memberships" Type="Self.Memberships" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProfileEntity_User">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Profiles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleEntity_Application">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="Roles" Type="Self.Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="User_Application">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRole_Role">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="Self.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRole_User">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="Self.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ComentariosProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ComidaProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DeletComida" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteComentarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteLocal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Deletesegue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteVisitar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletFoto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletUtilizador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="FotoProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ImagensPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Insertcomentarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="comentarios" Type="char" Mode="In" />
+    <Parameter Name="data" Type="date" Mode="In" />
+    <Parameter Name="classificacao" Type="int" Mode="In" />
+    <Parameter Name="hora" Type="time" Mode="In" />
+    <Parameter Name="local" Type="int" Mode="In" />
+    <Parameter Name="utilizador" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertComida" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigopostal" Type="nvarchar" Mode="In" />
+    <Parameter Name="Facebook" Type="nvarchar" Mode="In" />
+    <Parameter Name="Foto" Type="image" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Instagram" Type="nvarchar" Mode="In" />
+    <Parameter Name="Localidade" Type="nvarchar" Mode="In" />
+    <Parameter Name="Local1" Type="int" Mode="In" />
+    <Parameter Name="Morada" Type="varchar" Mode="In" />
+    <Parameter Name="Nome" Type="varchar" Mode="In" />
+    <Parameter Name="Telefone" Type="varchar" Mode="In" />
+    <Parameter Name="URLs" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Insertfoto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Ficheiro" Type="nvarchar" Mode="In" />
+    <Parameter Name="Legenda" Type="nvarchar" Mode="In" />
+    <Parameter Name="local1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertLocal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="utilizador" Type="int" Mode="In" />
+    <Parameter Name="nome" Type="nvarchar" Mode="In" />
+    <Parameter Name="morada" Type="varchar" Mode="In" />
+    <Parameter Name="codigopostal" Type="varchar" Mode="In" />
+    <Parameter Name="localidade" Type="char" Mode="In" />
+    <Parameter Name="longitude" Type="varchar" Mode="In" />
+    <Parameter Name="latitude" Type="varchar" Mode="In" />
+    <Parameter Name="descricao" Type="char" Mode="In" />
+    <Parameter Name="what3words" Type="char" Mode="In" />
+    <Parameter Name="foto" Type="nvarchar" Mode="In" />
+    <Parameter Name="video" Type="nvarchar" Mode="In" />
+    <Parameter Name="tipo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="insertSegue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="segueUtilizador" Type="int" Mode="In" />
+    <Parameter Name="seguidopor" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertUtilizador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Nome" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Userid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="InsertVisitar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Local1" Type="int" Mode="In" />
+    <Parameter Name="Nome" Type="varchar" Mode="In" />
+    <Parameter Name="morada" Type="varchar" Mode="In" />
+    <Parameter Name="codigopostal" Type="char" Mode="In" />
+    <Parameter Name="Localidade" Type="char" Mode="In" />
+    <Parameter Name="Telefone" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Urls" Type="nvarchar" Mode="In" />
+    <Parameter Name="Foto" Type="image" Mode="In" />
+  </Function>
+  <Function Name="Local1Proc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="segueProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Updatecomentarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="comentarios" Type="char" Mode="In" />
+    <Parameter Name="data" Type="date" Mode="In" />
+    <Parameter Name="classificacao" Type="int" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="hora" Type="time" Mode="In" />
+    <Parameter Name="local" Type="int" Mode="In" />
+    <Parameter Name="utilizador" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Updatecomida" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigopostal" Type="nvarchar" Mode="In" />
+    <Parameter Name="Facebook" Type="nvarchar" Mode="In" />
+    <Parameter Name="Foto" Type="image" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Instagram" Type="nvarchar" Mode="In" />
+    <Parameter Name="Localidade" Type="nvarchar" Mode="In" />
+    <Parameter Name="Local1" Type="int" Mode="In" />
+    <Parameter Name="Morada" Type="varchar" Mode="In" />
+    <Parameter Name="Nome" Type="varchar" Mode="In" />
+    <Parameter Name="Telefone" Type="varchar" Mode="In" />
+    <Parameter Name="URLs" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateSegue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="segueUtilizador" Type="int" Mode="In" />
+    <Parameter Name="seguidopor" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateUtilizador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Nome" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Userid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateVisitar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Local1" Type="int" Mode="In" />
+    <Parameter Name="Nome" Type="varchar" Mode="In" />
+    <Parameter Name="morada" Type="varchar" Mode="In" />
+    <Parameter Name="codigopostal" Type="char" Mode="In" />
+    <Parameter Name="Localidade" Type="char" Mode="In" />
+    <Parameter Name="Telefone" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Urls" Type="nvarchar" Mode="In" />
+    <Parameter Name="Foto" Type="image" Mode="In" />
+  </Function>
+  <Function Name="UtilizadorProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VisitarProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="InstaLocalModel3StoreContainer">
+    <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comentario_Classificacao" EntityType="Self.Comentario_Classificacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comida" EntityType="Self.Comida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Foto" EntityType="Self.Foto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Local" EntityType="Self.Local" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Memberships" EntityType="Self.Memberships" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profiles" EntityType="Self.Profiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Segue" EntityType="Self.Segue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersInRoles" EntityType="Self.UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilizador" EntityType="Self.Utilizador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visitar" EntityType="Self.Visitar" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Comentari__Local__300424B4" Association="Self.FK__Comentari__Local__300424B4">
+      <End Role="Local" EntitySet="Local" />
+      <End Role="Comentario_Classificacao" EntitySet="Comentario_Classificacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comida__Local1__31EC6D26" Association="Self.FK__Comida__Local1__31EC6D26">
+      <End Role="Local" EntitySet="Local" />
+      <End Role="Comida" EntitySet="Comida" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Foto__Local1__32E0915F" Association="Self.FK__Foto__Local1__32E0915F">
+      <End Role="Local" EntitySet="Local" />
+      <End Role="Foto" EntitySet="Foto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Local__Utilizado__33D4B598" Association="Self.FK__Local__Utilizado__33D4B598">
+      <End Role="Utilizador" EntitySet="Utilizador" />
+      <End Role="Local" EntitySet="Local" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Segue__SegueUtil__34C8D9D1" Association="Self.FK__Segue__SegueUtil__34C8D9D1">
+      <End Role="Local" EntitySet="Local" />
+      <End Role="Segue" EntitySet="Segue" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Visitar__Local1__36B12243" Association="Self.FK__Visitar__Local1__36B12243">
+      <End Role="Local" EntitySet="Local" />
+      <End Role="Visitar" EntitySet="Visitar" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipEntity_Application" Association="Self.MembershipEntity_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipEntity_User" Association="Self.MembershipEntity_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="ProfileEntity_User" Association="Self.ProfileEntity_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Profiles" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="RoleEntity_Application" Association="Self.RoleEntity_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Roles" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="User_Application" Association="Self.User_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRole_Role" Association="Self.UsersInRole_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRole_User" Association="Self.UsersInRole_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
